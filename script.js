@@ -155,32 +155,4 @@ document.getElementById('submitExam').addEventListener('click', function() {
     location.assign('index_1.html')
 
 });
-  // Here download page Starts
-const form = document.getElementById('examForm');
-
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById('name').value;
-  const subject = document.getElementById('subject').value;
-  const marks = resultDiv;
-
-
-  // Create the data structure for the Excel file
-  const examData = [
-    ["Student Name", "Subject", "Marks"],
-    [name, subject, marks]
-  ];
-
-  // Create a new workbook and worksheet
-  const workbook = XLSX.utils.book_new();
-  const worksheet = XLSX.utils.aoa_to_sheet(examData);
-
-  // Append the worksheet to the workbook
-  XLSX.utils.book_append_sheet(workbook, worksheet, "Exam Results");
-
-  // Export the workbook to an Excel file
-  XLSX.writeFile(workbook, name+".xlsx");
-});
-
-
+  
