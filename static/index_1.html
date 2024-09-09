@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Portal</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    form { margin: 20px; }
+    input, textarea { display: block; margin-bottom: 10px; width: 100%; padding: 8px; }
+  </style>
+</head>
+<body>
+
+<h2>Online Exam Portal</h2>
+<form id="examForm">
+  <label for="name">Student Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="subject">Subject:</label>
+  <input type="text" id="subject" name="subject" required>
+
+  <label for="marks">Marks Obtained:</label>
+  <input type="number" id="marks" name="marks" required>
+ 
+
+  <button type="submit">Submit Exam</button>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+
+<script src="script.js"></script>
+</body>
+</html>
