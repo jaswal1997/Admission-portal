@@ -10,7 +10,7 @@ const users = [
 
         exam: [
 
-            { question: 'What is 5 + 3?', options: ['6', '7', '8'], correct: '8' },
+            { question: 'In a certain code language COMPUTER is written as RFUVQNPC. How will MEDICINE be written in that code language?', options: ['MFEDJJOE', 'EOJDEJFM', 'MFEJDJOE',"EOJDJEFM"], correct: 'MFEJDJOE' },
 
             { question: 'What is the capital of Germany?', options: ['Berlin', 'Paris', 'Rome'], correct: 'Berlin' }
 
@@ -26,7 +26,7 @@ const users = [
 
         exam: [
 
-            { question: 'What is 7 - 4?', options: ['1', '2', '3'], correct: '3' },
+            { question: 'In a certain code language COMPUTER is written as RFUVQNPC. How will MEDICINE be written in that code language?', options: ['MFEDJJOE', 'EOJDEJFM', 'MFEJDJOE',"EOJDJEFM"], correct: 'MFEJDJOE' },
 
             { question: 'What is the capital of Spain?', options: ['Madrid', 'Lisbon', 'Barcelona'], correct: 'Madrid' }
 
@@ -148,11 +148,13 @@ document.getElementById('submitExam').addEventListener('click', function() {
 
 
     const resultDiv = document.getElementById('result');
+    const view = document.getElementById('view');
 
     resultDiv.innerHTML = `<h3>Your Score: ${score} / ${questions.length}</h3>`;
 
     resultDiv.style.display = 'block';
-    location.assign('index_1.html')
+    view.style.display = 'block';
+    
 
 });
   

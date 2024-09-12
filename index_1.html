@@ -44,8 +44,11 @@
   <label for="studentName">Student Name:</label>
   <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
 
-  <label for="subject">Subject:</label>
-  <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+  <label for="contact">Contact:</label>
+  <input type="text" id="contact" name="contact" placeholder="Enter contact" required>
+
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" placeholder="Enter email" required>
 
   <label for="marks">Marks Obtained:</label>
   <input type="number" id="marks" name="marks" placeholder="Enter marks obtained" required>
@@ -64,13 +67,14 @@
 
     // Get form data
     const studentName = document.getElementById('studentName').value;
-    const subject = document.getElementById('subject').value;
+    const contact = document.getElementById('contact').value;
     const marks = document.getElementById('marks').value;
+    const email = document.getElementById('email').value;
 
     // Prepare data to save in workbook
     const examData = [
-      ["Student Name", "Subject", "Marks"],
-      [studentName, subject, marks]
+      ["Student Name", "Contact","Email", "Marks"],
+      [studentName, contact,email, marks]
     ];
 
     // Create new workbook and worksheet
@@ -87,6 +91,6 @@
     form.reset();
   });
 </script>
-
+<script src="script.js"></script>
 </body>
 </html>
