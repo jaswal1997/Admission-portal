@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <div class="card-container">
+        <div class="card" onclick="openPortal('INFORMATION TECHNOLOGY')">INFORMATION TECHNOLOGY</div>
+        <div class="card" onclick="openPortal('ELECTRICAL TECHNICIAN')">ELECTRICAL TECHNICIAN</div>
+        <div class="card" onclick="openPortal('BEAUTY & WELLNESS')">BEAUTY & WELLNESS</div>
+        <div class="card" onclick="openPortal('STITCHING & TAILORING')">STITCHING & TAILORING</div>
+        <div class="card" onclick="openPortal('JCB')">JCB</div>
+    </div>
+    <script>
+        function openPortal(category) {
+            // Redirect to the portal page with a query parameter for the category
+            window.location.href = `portal.html?category=${encodeURIComponent(category)}`;
+        }
+    </script>
+</body>
+</html>

@@ -3,39 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Portal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="logo" height="100px"width="400px"style="margin-left: 80px;"/>
-        <img src="MCM_logo__1.png" alt="logo" height="80px"width="100px" style="float: right;"/>
-        
-    </header>
-    <main>
-        <section id="login">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Login</button>
+    <div class="container">
+        <div class="form-box">
+            <h2 id="form-title">Login</h2>
+            <form id="form" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="input-group signup-only" style="display: none;">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password">
+                </div>
+                <button type="submit" class="btn">Submit</button>
             </form>
-        </section>
-        
-        <section id="exam" style="display:none;">
-            <h2>Exam</h2>
-            <div id="questions"></div>
-            <button id="submitExam" >Submit Exam</button>
-            <div id="result" style="display:none;">
-               
-            </div> <button id="view"onclick="location.assign('index_1.html')"style="display:none;">Details</button>
-        </section>
-    </main>
+            <p id="toggle-text">Don't have an account? <span id="toggle-btn">Signup</span></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("toggle-btn").addEventListener("click", () => {
+            const title = document.getElementById("form-title");
+            const toggleText = document.getElementById("toggle-text");
+            const signupOnlyFields = document.querySelectorAll(".signup-only");
 
+            if (title.textContent === "Login") {
+                title.textContent = "Signup";
+                toggleText.innerHTML = 'Already have an account? <span id="toggle-btn">Login</span>';
+                signupOnlyFields.forEach(field => field.style.display = "block");
+            } else {
+                title.textContent = "Login";
+                toggleText.innerHTML = 'Don\'t have an account? <span id="toggle-btn">Signup</span>';
+                signupOnlyFields.forEach(field => field.style.display = "none");
+            }
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-    <script src="script.js"></script>
+            document.getElementById("toggle-btn").addEventListener("click", arguments.callee);
+        });
+
+        function handleLogin(event) {
+            event.preventDefault();
+            window.location.href = "dashboard.html";
+        }
+    </script>
 </body>
 </html>

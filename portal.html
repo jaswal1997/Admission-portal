@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="portal-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <img src="profile-placeholder.png" alt="Profile Picture">
+                <h3 id="username">Tony</h3>
+                <p id="email">tony@gmail.com</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Messages</a></li>
+                    <li><a href="#">Documents</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header class="main-header">
+                <h1 id="category-title"></h1>
+            </header>
+            <section>
+                <h2>Education</h2>
+                <button class="btn-add">+ Add New</button>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <button class="btn-add">+ Add New</button>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Extract the category from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category') || 'Category';
+
+        // Display the category on the page
+        document.getElementById('category-title').textContent = category;
+    </script>
+</body>
+</html>
